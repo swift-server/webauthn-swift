@@ -16,8 +16,31 @@ public enum WebAuthnError: Error {
     case authDataTooShort
     case extensionDataMissing
     case leftOverBytes
+
     case attestedCredentialFlagNotSet
+    case userPresentFlagNotSet
+    case userVerificationRequiredButFlagNotSet
+
     case attestedCredentialDataMissing
     case badRequestData
     case validationError
+    case formatError
+    case hashingClientDataJSONFailed
+    case relyingPartyIDHashDoesNotMatch
+    case attestationStatementMissing
+    case missingAttestedCredentialData
+    case missingAttestationFormat
+
+    case credentialIDTooBig
+    case credentialIDAlreadyExists
+
+    case invalidRawID
+    case invalidCredentialCreationType
+    case invalidClientDataJSON
+    case cborDecodingAttestationDataFailed
+    case authDataInvalidOrMissing
+
+    case unsupportedCOSEAlgorithm
+    case unsupportedCredentialPublicKeyAlgorithm
+    case unsupportedAttestationFormat
 }

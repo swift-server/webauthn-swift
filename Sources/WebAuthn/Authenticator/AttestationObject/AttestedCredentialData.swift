@@ -12,14 +12,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Foundation
-
-extension String {
-    var base64URLDecodedData: Data? {
-        var result = self.replacingOccurrences(of: "-", with: "+").replacingOccurrences(of: "_", with: "/")
-        while result.count % 4 != 0 {
-            result = result.appending("=")
-        }
-        return Data(base64Encoded: result)
-    }
+struct AttestedCredentialData: Codable {
+    let aaguid: [UInt8]
+    let credentialID: [UInt8]
+    let publicKey: [UInt8]
 }
